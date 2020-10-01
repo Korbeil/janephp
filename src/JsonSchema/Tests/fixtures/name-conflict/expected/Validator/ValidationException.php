@@ -1,6 +1,6 @@
 <?php
 
-namespace Jane\OpenApi2\Tests\Expected\Runtime;
+namespace Jane\JsonSchema\Tests\Expected\Validator;
 
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 class ValidationException extends \RuntimeException

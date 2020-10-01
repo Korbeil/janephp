@@ -2,7 +2,7 @@
 
 namespace Jane\JsonSchema\Tests\Expected\Validator;
 
-class ModelValidator implements Jane\JsonSchema\Tests\Expected\Runtime\ValidatorInterface
+class ModelValidator implements Jane\JsonSchema\Tests\Expected\Validator\ValidatorInterface
 {
     public function validate($data) : void
     {
@@ -10,7 +10,7 @@ class ModelValidator implements Jane\JsonSchema\Tests\Expected\Runtime\Validator
         $validator = \Symfony\Component\Validator\Validation::createValidator();
         $violations = $validator->validate($data, $constraint);
         if ($violations->count() > 0) {
-            throw new Jane\JsonSchema\Tests\Expected\Runtime\ValidationException($violations);
+            throw new Jane\JsonSchema\Tests\Expected\Validator\ValidationException($violations);
         }
     }
 }

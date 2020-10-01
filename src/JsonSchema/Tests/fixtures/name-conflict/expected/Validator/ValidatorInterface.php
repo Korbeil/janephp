@@ -1,6 +1,6 @@
 <?php
 
-namespace Jane\JsonSchema\Tests\Expected\Runtime;
+namespace Jane\JsonSchema\Tests\Expected\Validator;
 
 interface ValidatorInterface
 {
