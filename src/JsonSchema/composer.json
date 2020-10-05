@@ -42,7 +42,8 @@
         "friendsofphp/php-cs-fixer": "Allow to automatically fix cs on generated code for better visualisation"
     },
     "conflict": {
-        "symfony/framework-bundle": "5.1.0"
+        "symfony/framework-bundle": "5.1.0",
+        "nikic/php-parser": "<4.0.4"
     },
     "extra": {
         "branch-alias": {

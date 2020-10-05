@@ -34,15 +34,14 @@ class ValidatorGenerator implements GeneratorInterface
     {
         $namespace = $schema->getNamespace() . '\\Validator';
 
-        if (!self::$runtimeAdded) {
-            $this->addRuntimeFiles($schema);
-            self::$runtimeAdded = true;
-        }
-
         foreach ($schema->getClasses() as $classGuess) {
             if (\count($propertiesGuesses = $classGuess->getValidatorGuesses()) > 0) {
-                $className = $this->naming->getValidatorName($classGuess->getName());
+                if (!self::$runtimeAdded) {
+                    $this->addRuntimeFiles($schema);
+                    self::$runtimeAdded = true;
+                }
 
+                $className = $this->naming->getValidatorName($classGuess->getName());
                 $collectionItems = [];
 
                 foreach ($propertiesGuesses as $name => $guesses) {
